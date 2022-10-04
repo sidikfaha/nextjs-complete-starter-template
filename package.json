@@ -6,7 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint:ts": "eslint --ext \".ts,.tsx,js,jsx\" --ignore-path .gitignore .",
+    "lint:style": "stylelint \"**/*.{css,scss,sass,html}\" --ignore-path .gitignore",
+    "lint:prettier": "prettier --check .",
+    "lint": "yarn lint:ts && yarn lint:style && yarn lint:prettier && next lint",
+    "lintfix": "prettier --write --list-different . && yarn lint:ts --fix && yarn lint:style --fix",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": "eslint --cache",
+    "*.{css,scss,sass,html}": "stylelint",
+    "*.**": "prettier --check --ignore-unknown"
   },
   "dependencies": {
     "next": "12.3.1",
@@ -14,11 +24,26 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@types/node": "18.8.2",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
+    "autoprefixer": "^10.4.12",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.31.8",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "postcss": "^8.4.17",
+    "postcss-html": "^1.5.0",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.13.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended": "^9.0.0",
+    "stylelint-config-standard": "^28.0.0",
+    "tailwindcss": "^3.1.8",
     "typescript": "4.8.4"
   }
 }
