@@ -71,12 +71,6 @@ typings/
 # next.js build output
 .next
 
-# Next generate
-dist
-
-# vuepress build output
-.vuepress/dist
-
 # Serverless directories
 .serverless
 
