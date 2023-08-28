@@ -33,7 +33,7 @@
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react": "^7.33.2",
     "husky": "^8.0.2",
     "lint-staged": "^13.1.0",
     "postcss": "^8.4.21",
